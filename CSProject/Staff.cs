@@ -34,22 +34,21 @@ namespace CSProject
         {
             //print out calculate pay..
             Console.WriteLine("\n...Calculating Pay...");
+
             //then..calculate basic pay with rate*hoursworked
             BasicPay = _hourlyRate * _hWorked;
-            Console.WriteLine("\nTotal of basic Salary is:" + BasicPay);
+
+            //assign basic salary to total pay
+            TotalPay = BasicPay;
         }
 
-        //ToString method (too override the predefine ToString) to return a string that represent the current class
+        //ToString method (to override the predefined ToString) to return a string that represent the current class
         public override string ToString()
         {
             return "\nName of Staff is " + NameOfStaff + ". Current hourly rate is " + _hourlyRate + " and have worked for " + _hWorked;
         }
 
         //constructors
-        public Staff()
-        {
-            Console.WriteLine("Parent constructor w/out parameters");
-        }
         public Staff(string name, float rate)
         {
             //initialiaze fieds members

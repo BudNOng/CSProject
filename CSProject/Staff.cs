@@ -45,8 +45,10 @@ namespace CSProject
         //ToString method (to override the predefined ToString) to return a string that represent the current class
         public override string ToString()
         {
-            return "\nName of Staff is " + NameOfStaff + ". Current hourly rate is " + _hourlyRate + " and have worked for " + _hWorked;
-        }
+            return "\nName of Staff is " + NameOfStaff +
+                "\nCurrent hourly rate is " + _hourlyRate +
+                "\nand have worked for " + _hWorked +
+                "\nTotal pay for this Staff is n/a as this is parent class Staff not used to calculate Staff class";      }
 
         //constructors
         public Staff(string name, float rate)

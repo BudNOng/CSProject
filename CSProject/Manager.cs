@@ -29,7 +29,7 @@ namespace CSProject
             {
                 //add allowance to total pay
                 Console.WriteLine("\nThis Manager has worked more than 160 hours. Adding allowance of 1000");
-                TotalPay = TotalPay + Allowance;
+                TotalPay += Allowance;
                 Console.WriteLine("\nNew Total Pay is: {0}", TotalPay);
             }
                 
@@ -40,7 +40,8 @@ namespace CSProject
         {
             return "\nChild constructor - This Manager, " + NameOfStaff + 
                 ", with hourly rate of " + _managerHourlyRate + "/hour -" +
-                " this manager have worked for " + HoursWorked + " hours";
+                " this manager have worked for " + HoursWorked + " hours" +
+                "\nTotal pay for this Manager Staff is " + TotalPay;
         }
     }
 }

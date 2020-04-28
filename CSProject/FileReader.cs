@@ -9,7 +9,7 @@ namespace CSProject
     {
         public List<Staff> ReadFile()
         {
-            List<Staff> myStaff = new List<Staff>();
+            List<Staff> myStaff = new List<Staff>(); // need to know how this works...?
             string[] result = new string[2];
             string path = "staff.txt";
             string[] separator = { ", " };

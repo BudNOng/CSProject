@@ -9,13 +9,14 @@ namespace CSProject
     {
         public List<Staff> ReadFile()
         {
-            List<Staff> myStaff = new List<Staff>(); // need to know how this works...?
+            List<Staff> myStaff = new List<Staff>();
             string[] result = new string[2];
             string path = "staff.txt";
             string[] separator = { ", " };
 
             if (File.Exists(path))
             {
+                
                 using(StreamReader sr = new StreamReader(path))
                 {
                     while (!sr.EndOfStream)
@@ -32,6 +33,8 @@ namespace CSProject
                          * else if resut[1] is Admin then...
                          * ...then add new Admin object (and it's name result[0]) into myStaff of Staff Class List.
                          */
+
+                        //James, Manager
                         if (result[1] == "Manager")
                         {
                             myStaff.Add(new Manager(result[0]));

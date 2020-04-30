@@ -79,22 +79,29 @@ namespace CSProject
             var result = from Staff staff in myStaff // <----states that we're performing query on the myStaff List of type Staff Class
                          where staff.HoursWorked < 10
                          orderby staff.NameOfStaff ascending
-                         select new { staff.NameOfStaff, staff.HoursWorked }; //using 'new' keyword, need it whenever we want to return more than one fields/properties from the objects.
-
+                         select new {staff.NameOfStaff, staff.HoursWorked }; //using 'new' keyword, need it whenever we want to return more than one fields/properties from the objects.
+            
+            //Ienumerable. LEARN!!
+            /*var result2 = myStaff.Where(staff => staff.HoursWorked < 10).OrderBy(staff => staff.NameOfStaff);*/
+            
             string path = "summary.txt";
 
             using(StreamWriter sw = new StreamWriter(path, true))
             {
                 sw.WriteLine("Staff with less than 10 working hours");
 
-                foreach (Staff staff in result)
+                foreach (var staff in result) //using var keyword instead of Staff as for each cannot recognise the anonymous type from result
                 {
-                    sw.WriteLine("\nName of staff: {0}, \nHours WOrked: {1}", staff.NameOfStaff, staff.HoursWorked);
+                    sw.WriteLine("\nName of staff: {0}, hours worked: {1}", staff.NameOfStaff, staff.HoursWorked);
                 }
 
-                sw.WriteLine("\nName of staff: {0}, \nHours WOrked: {1}");
-                sw.WriteLine("");
+                sw.Close();
             }
+        }
+
+        public override string ToString()
+        {
+            return "This payslip is for " + _month + "' and year " + _year;
         }
     }
 }

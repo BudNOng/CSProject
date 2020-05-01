@@ -16,6 +16,7 @@ namespace CSProject
 
             if (File.Exists(path))
             {
+                
                 using(StreamReader sr = new StreamReader(path))
                 {
                     while (!sr.EndOfStream)
@@ -32,17 +33,20 @@ namespace CSProject
                          * else if resut[1] is Admin then...
                          * ...then add new Admin object (and it's name result[0]) into myStaff of Staff Class List.
                          */
+
+                        //James, Manager - file format example.
                         if (result[1] == "Manager")
                         {
+                            //if the second in the collection is Manager then add new Manager object to myStaff List
                             myStaff.Add(new Manager(result[0]));
                         }
                         else if (result[1] == "Admin")
                         {
+                            //if the second item in the result is Admin then add new Admin object to myStaff List
                             myStaff.Add(new Admin(result[0]));
-                        }
-
-                        sr.Close();
+                        }                        
                     }
+                    sr.Close();
                 }
             }
             else

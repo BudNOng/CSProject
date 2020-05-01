@@ -13,7 +13,8 @@ namespace CSProject
         public int Allowance { get; private set; }
 
         //constructor
-        public Manager(string name) :base(name, _managerHourlyRate)
+        public Manager(string name)
+            :base(name, _managerHourlyRate)
         {
 
         }
@@ -38,10 +39,11 @@ namespace CSProject
         //override ToString method
         public override string ToString()
         {
-            return "\nChild constructor - This Manager, " + NameOfStaff + 
-                ", with hourly rate of " + _managerHourlyRate + "/hour -" +
-                " this manager have worked for " + HoursWorked + " hours" +
-                "\nTotal pay for this Manager Staff is " + TotalPay;
+            return "\nChild constructor - This is Object of Manager, " + NameOfStaff +
+                ",\nwith hourly rate of " + _managerHourlyRate + "/hour -" +
+                "\nthis manager have worked for " + HoursWorked + " hours" +
+                "\nTotal pay for this Manager Staff is " + TotalPay +
+                "\n================= END =================";
         }
     }
 }

@@ -32,10 +32,11 @@ namespace CSProject
 
         public override string ToString()
         {
-            return "\nAdmin Staff named " + NameOfStaff + " have worked for " + HoursWorked + " hours." +
-                "\nOn top of that this staff have worked " + OvertimeHours + " overtime hours" +
-                "\n******* Total pay for this Admin Staff is " + TotalPay + " *******";
-
+            return "\nChild constructor - This is Object of Admin, " + NameOfStaff +
+                ",\nwith hourly rate of " + _adminHourlyRate + "/hour -" +
+                "\nthis manager have worked for " + HoursWorked + " hours" +
+                "\nTotal pay for this Manager Staff is " + TotalPay +
+                "\n================= END =================";
         }
     }
 }

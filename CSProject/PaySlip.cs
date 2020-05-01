@@ -27,7 +27,7 @@ namespace CSProject
         {
             string path;
 
-            //foreach loop to go through each of the staff in the List of Staff Class
+            //foreach loop to go through each of the Staff in the List of Staff Class
             foreach(Staff staff in myStaff) // <----state that
             {
                 //Console.WriteLine("\nTest to see that the GeneratePaySlip method is called --> " + staff.NameOfStaff + ".txt");
@@ -36,11 +36,11 @@ namespace CSProject
                 //write streamwrite class to write to the file at the pathspecified by 'path' variable.
                 using (StreamWriter sw = new StreamWriter(path, true)) //true is used to append data. No semi colon ';' when 'using' used
                 {
-                    sw.WriteLine("\nPAYSLIP FOR {0} {1}", (MonthOfYear) _month, _year); //as _month is an integer, this need to cast it into a MonthsOfYear??
+                    sw.WriteLine("PAYSLIP FOR {0} {1}", (MonthOfYear) _month, _year); //as _month is an integer, this need to cast it into a MonthsOfYear??
                     sw.WriteLine("=========================================");
                     sw.WriteLine("Name of Staff: {0}", staff.NameOfStaff);
-                    sw.WriteLine("HoursW WOrked: {0}", staff.HoursWorked);
-                    sw.WriteLine("\nBasic Pay: {0:C}", staff.BasicPay);
+                    sw.WriteLine("Hours worked: {0}", staff.HoursWorked);
+                    sw.WriteLine("Basic pay: {0:C}", staff.BasicPay);
 
                     /*  if current run time object type is manager then 
                      *      print Allowance property in Manager Class
@@ -52,17 +52,17 @@ namespace CSProject
                     {
                         //another casting in ((Manager)staff)
                         //conversion an object reference to its base class reference so it can see the appropriate properties
-                        sw.WriteLine("allowance: {0:C}", ((Manager)staff).Allowance);
+                        sw.WriteLine("allowance Imbursed: {0:C}", ((Manager)staff).Allowance);
                     }
                     else
                     {
                         //same again here but for if the type of staff is Admin.
                         //then Casting ((Admin)staff).... convert staff type (parent) to admin type (child) to access admin's property. 
-                        sw.WriteLine("allowance: {0:C}", ((Admin)staff).Overtime);
+                        sw.WriteLine("Overtime Imbursed: {0:C}", ((Admin)staff).Overtime);
                     }
 
-                    sw.WriteLine("/n=========================================");
-                    sw.WriteLine("\nTotal Pay : {0:C}" , staff.TotalPay);
+                    sw.WriteLine("=========================================");
+                    sw.WriteLine("Total Pay : {0:C}" , staff.TotalPay);
                     sw.WriteLine("=========================================");
 
                     //close Streamwriter
@@ -86,7 +86,7 @@ namespace CSProject
             
             string path = "summary.txt";
 
-            using(StreamWriter sw = new StreamWriter(path, true))
+            using(StreamWriter sw = new StreamWriter(path))
             {
                 sw.WriteLine("Staff with less than 10 working hours");
 
